@@ -1,0 +1,13 @@
+@startuml ユースケース図
+
+actor 利用者
+
+rectangle ホテル宿泊予約{
+usecase キャンペーン
+usecase ログイン
+usecase 予約
+}
+キャンペーン.> 予約: << include >>
+予約.> ログイン: << extend >>
+利用者--> 予約
+@enduml

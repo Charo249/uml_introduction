@@ -1,0 +1,13 @@
+@startuml ユースケース図
+left to right direction
+actor 社員
+actor 人事担当者
+
+rectangle 従業員登録システム{
+usecase 従業員システム
+usecase 社員情報
+}
+社員 .> 社員情報
+人事担当者 ..>従業員システム:社員情報の登録
+社員情報 <-- 従業員システム
+@enduml
