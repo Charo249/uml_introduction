@@ -9,5 +9,5 @@ usecase 予約
 }
 キャンペーン.> 予約: << include >>
 予約.> ログイン: << extend >>
-利用者--> 予約
+利用者--> 予約:<< extend >>
 @enduml
