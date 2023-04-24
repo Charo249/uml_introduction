@@ -1,0 +1,30 @@
+@startuml ホテル予約システム
+left to right direction
+
+actor 利用者 #DDDDDD;line:Black;line.bold;
+actor ホテル従業員 #DDDDDD;line:Black;line.bold;
+actor ホテル管理者 #DDDDDD;line:Black;line.bold;
+
+rectangle ホテル予約システム{
+usecase 空室状況を閲覧
+usecase 空室状況を入力
+usecase 予約の集計
+usecase システムにログインする
+usecase システムにログイン
+usecase システムに登録
+
+usecase (<u>ホテルの部屋を予約</u>\n拡張点\nキャンペーン期期間中かどうか判別) as input
+usecase 宿泊価格がキャンペーン価格になる
+}
+
+システムに登録 <. システムにログイン : <<include>>
+空室状況を閲覧 <-- 利用者
+空室状況を入力 <-- ホテル従業員
+予約の集計 <-- ホテル管理者
+空室状況を入力 <. システムにログイン : <<include>>
+予約の集計 <. システムにログイン : <<include>>
+input <. (宿泊価格がキャンペーン価格になる)
+システムにログインする <. input : << include >>
+input <-- 利用者
+
+@enduml
