@@ -1,0 +1,21 @@
+@startuml
+class 契約社員 {
+---
++ 雇用関係(有期雇用):void
+}
+class 派遣 {
+---
++ 雇用関係(有期雇用):void
+}
+class 正社員 {
+- 社員ID 
+- 社員名
+---
++ 雇用関係（無期雇用） ():void
+}
+正社員 <|-- 派遣
+正社員 <|-- 契約社員
+'class User {
+
+'keyboard <-up- User:<< use >>
+@enduml
