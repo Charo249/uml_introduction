@@ -1,0 +1,31 @@
+@startuml
+hide footbox
+Actor 登録会員 as member
+participant ":フロア店員" as boundary <<boundary>>
+participant ":料理人" as control <<control>>
+
+
+mainframe sd ラーメン屋さん 
+activate member
+member -> boundary : ラーメンを注文する
+activate  boundary
+    boundary -> control : 調理を指示する
+    activate control
+    
+    control -> control: 料理をする
+    
+    boundary <-- control : ラーメン 
+        
+    member <-- boundary :ラーメン 
+        
+deactivate member       
+deactivate boundary
+deactivate control
+    
+
+' control -> entity : <<create>>\n1.1.1生成():
+' control -> entity : 1.1.2会員情報取得():<<create>>
+' control <- entity : 登録会員情報
+
+
+@enduml
