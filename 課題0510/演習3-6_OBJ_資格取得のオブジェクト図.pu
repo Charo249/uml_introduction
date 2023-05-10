@@ -1,0 +1,39 @@
+@startuml
+
+left to right direction
+object "<u>会社</u>" as company {
+
+}
+
+
+object "<u>社員1: 社員</u>" as t {
+氏名 = 高橋洋平
+取得資格 =
+情報処理安全確保支援士
+LinuC試験level1 
+申請日 =
+2020年10月21日
+2021年3月28日
+}
+object "<u>社員2: 社員</u>" as h {
+氏名 = 樋口正之
+取得資格 =
+情報処理安全確保支援士
+申請日 = 2020年10月21日
+}
+
+object "<u>資格1: 資格</u>" as PE {
+名称 = 情報処理安全確保支援士 
+}
+
+object "<u>資格2: 資格</u>" as PE2 {
+名称 = LinuC試験level1
+}
+
+
+company -- t
+company -- h
+t -- PE
+t -- PE2
+h -- PE
+@enduml

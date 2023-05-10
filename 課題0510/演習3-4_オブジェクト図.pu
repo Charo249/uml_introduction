@@ -1,0 +1,27 @@
+@startuml
+
+left to right direction
+object "<u>タイヤ1: タイヤ</u>" as tire1 {
+サイズ =165/55R15 75H
+}
+object "<u>タイヤ2: タイヤ</u>" as tire2 {
+サイズ =165/55R15 75H
+}
+object "<u>タイヤ3: タイヤ</u>" as tire3 {
+サイズ =165/55R15 75H
+}
+object "<u>タイヤ4: タイヤ</u>" as tire4 {
+サイズ =165/55R15 75H
+}
+
+object "<u>車情報: 車</u>" as car1 {
+モデル名    
+メーカー
+製造年
+使用できるタイヤのサイズ = 165/55R15 75H
+}
+tire1 -- car1
+tire2 -- car1
+tire3 -- car1
+tire4 -- car1
+@enduml

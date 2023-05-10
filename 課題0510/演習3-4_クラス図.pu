@@ -1,0 +1,15 @@
+@startuml
+
+class 車 {
+    -メーカー: string
+    -モデル名: string
+    -製造年: int
+    -tires: タイヤ[*]
+}
+class タイヤ {
+    -タイヤのサイズ: int
+}
+
+車 "4 tires" -- "1" タイヤ
+
+@enduml
