@@ -1,0 +1,28 @@
+@startuml
+hide footbox
+participant "利用者:user" as boundary
+participant ":予約画面" as control
+
+
+
+
+activate  boundary
+    boundary ->> control : ログインメッセージを送る()
+    activate control
+    control -> control: 認証する()
+    
+    activate control
+        
+     
+        
+    
+deactivate boundary
+deactivate control
+    
+
+' control -> entity : <<create>>\n1.1.1生成():
+' control -> entity : 1.1.2会員情報取得():<<create>>
+' control <- entity : 登録会員情報
+
+
+@enduml

@@ -1,0 +1,38 @@
+@startuml
+hide footbox
+Actor 受注係 as member
+participant ":注文登録画面" as boundary <<boundary>>
+participant ":商品" as control <<control>>
+
+
+
+activate member
+member -> boundary : ラーメンを注文する
+
+activate boundary
+boundary -> control
+activate control
+activate boundary
+boundary -> boundary
+deactivate boundary
+control --> boundary :syouhinnjyouhou
+deactivate control
+deactivate boundary
+
+    
+    
+activate control
+boundary --> control : syouhinnjyouhou 
+deactivate control        
+
+deactivate boundary        
+deactivate member       
+
+    
+
+' control -> entity : <<create>>\n1.1.1生成():
+' control -> entity : 1.1.2会員情報取得():<<create>>
+' control <- entity : 登録会員情報
+
+
+@enduml
