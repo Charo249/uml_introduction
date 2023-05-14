@@ -1,0 +1,32 @@
+@startuml
+hide footbox
+participant "データ更新コントロール:controller" as controller
+participant "ホテル:hotel" as hotel
+participant "予約" as yoyaku
+
+
+
+
+activate  controller
+    controller -> hotel : 予約操作
+    
+    activate hotel
+    activate yoyaku
+    hotel -> yoyaku : 作成する
+    hotel -> hotel: 予約登録操作
+    
+    activate hotel
+        
+     
+        
+deactivate yoyaku
+deactivate controller
+deactivate hotel
+    
+
+' control -> entity : <<create>>\n1.1.1生成():
+' control -> entity : 1.1.2会員情報取得():<<create>>
+' control <- entity : 登録会員情報
+
+
+@enduml
