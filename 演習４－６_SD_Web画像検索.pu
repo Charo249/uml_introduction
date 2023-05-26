@@ -1,22 +1,25 @@
 @startuml
 hide footbox
-Actor 登録会員 as member
-participant ":フロア店員" as boundary <<boundary>>
-participant ":料理人" as control <<control>>
+Actor ユーザ as member
+participant ":ブラウザ" as boundary <<boundary>>
+participant ":webサーバー" as control <<control>>
+participant ":画像サーバー" as server
 
 
-mainframe sd ラーメン屋さん 
 activate member
-member -> boundary : ラーメンを注文する
+member -> boundary :リンクボタンを押す
 activate  boundary
-    boundary -> control : 調理を指示する
+    boundary -> control : 画像ファイル名を渡す
     activate control
     
-    control -> control: 料理をする
-    
-    boundary <-- control : ラーメン 
+    activate server
+    control -> server: 画像ファイルを探す
+    server --> control : 画像ファイル
+    server -> server : 画像ファイルを探す
+
+    boundary <-- control : htmlと画像ファイル 
         
-    member <-- boundary :ラーメン 
+    member <-- boundary :画像の閲覧
         
 deactivate member       
 deactivate boundary
