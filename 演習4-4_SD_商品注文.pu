@@ -2,32 +2,31 @@
 hide footbox
 Actor 受注係 as member
 participant ":注文登録画面" as boundary <<boundary>>
-participant ":商品" as control <<control>>
+participant ":商品1" as control <<entity>>
+participant ":商品2" as control2 <<entity>>
 
 
 
 activate member
-member -> boundary : ラーメンを注文する
+member -> boundary : 商品を注文する
 
 activate boundary
-boundary -> control
+boundary -> control : 商品情報を表示する支持を送る
 activate control
 activate boundary
-boundary -> boundary
+boundary -> boundary : 注文情報を表示 
 deactivate boundary
-control --> boundary :syouhinnjyouhou
+control --> boundary :商品情報
 deactivate control
 deactivate boundary
 
-    
-    
-activate control
-boundary --> control : syouhinnjyouhou 
-deactivate control        
+member -> boundary: 商品情報の確認 
+activate control2
+
+boundary --> control2 : 商品情報 
 
 deactivate boundary        
 deactivate member       
-
     
 
 ' control -> entity : <<create>>\n1.1.1生成():
