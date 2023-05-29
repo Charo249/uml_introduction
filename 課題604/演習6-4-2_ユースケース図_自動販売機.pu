@@ -1,0 +1,14 @@
+@startuml ユースケース図
+left to right direction
+actor 客 #AA0999;line:Red;line.bold;
+actor ベンダー
+package 自動販売機 {
+usecase お金を入れる
+usecase ボタンを押す
+usecase 商品をとる
+}
+客 --> お金を入れる
+客 -left-> ボタンを押す
+客 --> 商品をとる
+ベンダー --> 商品をとる
+@enduml

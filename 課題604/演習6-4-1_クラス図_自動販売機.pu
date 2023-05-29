@@ -1,0 +1,23 @@
+@startuml
+class 自動販売機{
+- 商品 :Stirng
+-商品取り出し口 :String
+} 
+
+class ボタン{
+-商品名 :String
+-売り切れ:String
+} 
+class 料金装置{
+-硬貨投入口 :String
+-札投入口 :String
+-おつり口 :String
+}
+class ベンダー装置{
+
+}
+自動販売機 -> 料金装置
+料金装置 --> ボタン
+ボタン --> 自動販売機
+ベンダー装置 -> 自動販売機
+@enduml

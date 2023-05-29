@@ -1,0 +1,31 @@
+@startuml
+hide footbox
+Actor 客 as member
+participant ":料金装置" as boundary
+participant ":ボタン" as control
+participant ":ベンダー措置" as server
+
+
+activate member
+member -> boundary :お札または硬貨を入れる
+activate  boundary
+    boundary -> control : 商品を選ぶ
+    activate control
+    
+    activate server
+    control -> server: 商品を選んでボタンを押す
+    server --> member:商品を取り出す
+        
+    member <-- boundary :紙幣または貨幣を戻す
+        
+deactivate member       
+deactivate boundary
+deactivate control
+    
+
+' control -> entity : <<create>>\n1.1.1生成():
+' control -> entity : 1.1.2会員情報取得():<<create>>
+' control <- entity : 登録会員情報
+
+
+@enduml
