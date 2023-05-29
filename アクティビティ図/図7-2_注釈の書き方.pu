@@ -1,0 +1,13 @@
+@startuml 注釈
+title 注釈の書き方
+start
+:野菜を洗う;
+-> フローに補足説明;
+:野菜を切る;
+note right
+注釈
+食べやすい大きさに切る
+end note
+:野菜を炒める;
+stop
+@enduml

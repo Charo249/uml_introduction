@@ -1,0 +1,10 @@
+@startuml アクティビティ図
+title 基本的な書き方
+start
+:朝起きる;
+:顔を洗う;
+:卵を焼く;
+:<color:pink>目玉焼き]
+:朝食を食べる;
+stop
+@enduml
