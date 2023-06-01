@@ -1,24 +1,7 @@
 @startuml
-
-actor ユーザー #DDDDDD;line:Black;line.bold;
-actor 光センサ #DDDDDD;line:Black;line.bold;
-
-rectangle ライントレーサー{
-usecase 電源スイッチを押す
-usecase 右旋回する
-usecase 左旋回する
-usecase 右境界線上を進む
-usecase ボタンを押してシステムを停止
-
-}
-
-
-ユーザー --> 電源スイッチを押す
-
-光センサ --> 右旋回する :暗いと判断ｈ
-光センサ --> 左旋回する :明るいと判断 
-右旋回する --> 右境界線上を進む
-左旋回する --> 右境界線上を進む
-
-
-@endUml
+[*]-->電源off
+[*]-->電源on
+電源on --> 右旋回 :光センサが暗いと判断した場合
+電源on --> 左旋回 :光センサが明るいと判断した場合
+電源off --> [*]
+@enduml
