@@ -1,0 +1,16 @@
+@startuml
+|ユーザ|
+|ユーザ|
+
+|ユーザ|
+start
+fork
+:ユーザ名を入力; 
+fork again
+:パスワードを入力;
+end fork
+
+if () is (<color:red>[認証成功]) then
+#Pink:予約を行う;
+else (<color:blue>[認証失敗])
+#skyblue:ユーザー名とパスワードをもう一度入力する;
